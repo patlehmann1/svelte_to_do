@@ -1,0 +1,24 @@
+:root {
+	--bg: #faf8f5;
+	--surface: #f2ece3;
+	--border: #d4c9bc;
+	--text: #2e1f0f;
+	--text-muted: #8c7b6b;
+	--accent: #8b5e3c;
+	--accent-hover: #6e4a2d;
+	--danger: #9b4a2a;
+	--danger-border: #c8845e;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: var(--bg);
+	color: var(--text);
+	font-family: 'DM Sans', system-ui, sans-serif;
+}
