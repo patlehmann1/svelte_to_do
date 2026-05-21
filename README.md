@@ -1,42 +1,41 @@
-# sv
+# To Do
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A simple to-do app built with SvelteKit 5 (Runes). Add, edit, and delete tasks — todos persist in `localStorage` so nothing is lost on refresh.
 
-## Creating a project
+## Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **SvelteKit 5** with Svelte Runes (`$state`, `$derived`, `$effect`)
+- **TypeScript**
+- **Plain scoped CSS** — no CSS framework
+- [Fraunces](https://fonts.google.com/specimen/Fraunces) + [DM Sans](https://fonts.google.com/specimen/DM+Sans) via Google Fonts
 
-```sh
-# create a new project
-npx sv create my-app
+## Project structure
+
 ```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.15.3 create --template minimal --types ts --install npm .
+src/
+├── app.html                        # HTML shell (Google Fonts link)
+├── app.css                         # Global CSS variables (design tokens) + body reset
+├── lib/
+│   ├── todos.svelte.ts             # Reactive todo store with localStorage persistence
+│   └── components/
+│       └── TodoItem.svelte         # Single todo — display/inline-edit/delete
+└── routes/
+    ├── +layout.svelte              # Imports app.css
+    └── +page.svelte                # Main page — add form + todo list
 ```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
 ```sh
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
+
+Open [http://localhost:5173](http://localhost:5173).
 
 ## Building
 
-To create a production version of your app:
-
 ```sh
 npm run build
+npm run preview
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
